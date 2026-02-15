@@ -1,0 +1,27 @@
+# Node modules and logs – don't copy them, install fresh inside Docker
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Next.js build output – build happens inside Docker
+.next
+
+# Local environment files – keep secrets out of the image
+.env
+.env.local
+.env.development
+.env.test
+
+# Git and IDE configuration – not needed in Docker image
+.git
+.gitignore
+.vscode
+.idea
+
+# System and temporary files
+.DS_Store
+*.log
+*.swp
+
+# Docker Compose override file – only for local testing
+docker-compose.override.yml
