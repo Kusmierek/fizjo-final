@@ -1,34 +1,46 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Phone,
+  Mail,
   Clock,
   Send,
   CheckCircle2,
-  ArrowUpRight
-} from "lucide-react"
+  ArrowUpRight,
+} from "lucide-react";
 
 function SocialIcon({ type }: { type: "instagram" | "facebook" }) {
   if (type === "instagram") {
     return (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        className="w-5 h-5"
+      >
         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
       </svg>
-    )
+    );
   }
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="w-5 h-5"
+    >
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
-  )
+  );
 }
 
 const contactInfo = [
@@ -50,19 +62,19 @@ const contactInfo = [
     content: "Pon-Pt: 8:00-18:00",
     href: null,
   },
-]
+];
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsLoading(true)
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    setIsLoading(false)
-    setIsSubmitted(true)
-  }
+    e.preventDefault();
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsLoading(false);
+    setIsSubmitted(true);
+  };
 
   return (
     <div className="flex flex-col">
@@ -71,7 +83,7 @@ export default function ContactPage() {
         {/* Background decorations */}
         <div className="absolute top-20 right-[10%] w-64 h-64 bg-primary/5 animate-blob" />
         <div className="absolute bottom-20 left-[5%] w-48 h-48 bg-accent/5 animate-blob animation-delay-400" />
-        
+
         <div className="relative px-6 md:px-10 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
@@ -81,14 +93,17 @@ export default function ContactPage() {
                   Skontaktuj się
                 </span>
               </div>
-              
+
               <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8">
-                Porozmawiajmy<br />
-                <span className="text-stroke text-primary">o Twoim zdrowiu</span>
+                Porozmawiajmy
+                <br />
+                <span className="text-stroke text-primary">
+                  o Twoim zdrowiu
+                </span>
               </h1>
-              
+
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Masz pytania lub chcesz umówić wizytę? Skontaktuj się ze mną 
+                Masz pytania lub chcesz umówić wizytę? Skontaktuj się ze mną
                 telefonicznie, mailowo lub przez formularz kontaktowy.
               </p>
             </div>
@@ -104,17 +119,19 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div>
                 <div className="flex items-center gap-3 mb-8">
-                  <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">Dane kontaktowe</span>
+                  <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
+                    Dane kontaktowe
+                  </span>
                   <div className="w-12 h-px bg-accent" />
                 </div>
-                
+
                 <div className="space-y-6 mb-12">
                   {contactInfo.map((info, index) => {
-                    const Icon = info.icon
+                    const Icon = info.icon;
                     return (
                       <div key={index} className="group">
                         {info.href ? (
-                          <a 
+                          <a
                             href={info.href}
                             className="flex items-center gap-6 p-6 bg-card border border-border hover:border-primary/30 transition-colors"
                           >
@@ -122,8 +139,12 @@ export default function ContactPage() {
                               <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                             </div>
                             <div>
-                              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">{info.title}</p>
-                              <p className="font-serif text-xl text-foreground group-hover:text-primary transition-colors">{info.content}</p>
+                              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">
+                                {info.title}
+                              </p>
+                              <p className="font-serif text-xl text-foreground group-hover:text-primary transition-colors">
+                                {info.content}
+                              </p>
                             </div>
                           </a>
                         ) : (
@@ -132,19 +153,25 @@ export default function ContactPage() {
                               <Icon className="h-6 w-6 text-primary" />
                             </div>
                             <div>
-                              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">{info.title}</p>
-                              <p className="font-serif text-xl text-foreground">{info.content}</p>
+                              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">
+                                {info.title}
+                              </p>
+                              <p className="font-serif text-xl text-foreground">
+                                {info.content}
+                              </p>
                             </div>
                           </div>
                         )}
                       </div>
-                    )
+                    );
                   })}
                 </div>
 
                 {/* Social Media */}
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Social media</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
+                    Social media
+                  </p>
                   <div className="flex gap-3">
                     {(["instagram", "facebook"] as const).map((social) => (
                       <a
@@ -175,109 +202,39 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Contact Form */}
-              <div className="bg-card border border-border p-8 md:p-12">
+              <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-8">
-                  <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">Formularz</span>
+                  <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
+                    Wsparcie
+                  </span>
                   <div className="w-12 h-px bg-accent" />
                 </div>
-                
-                {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center py-16 text-center">
-                    <div className="w-20 h-20 bg-primary/10 flex items-center justify-center mb-6">
-                      <CheckCircle2 className="h-10 w-10 text-primary" />
-                    </div>
-                    <h3 className="font-serif text-2xl text-foreground mb-4">
-                      Wiadomość wysłana!
-                    </h3>
-                    <p className="text-muted-foreground mb-8 max-w-sm">
-                      Dziękuję za kontakt. Odpowiem najszybciej jak to możliwe.
-                    </p>
-                    <Button 
-                      onClick={() => setIsSubmitted(false)} 
-                      variant="outline" 
-                      className="bg-transparent"
+                <h3 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-8">
+                  Holistyczne podejście <br />
+                  do Twojego zdrowia
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
+                  W pracy łączę fizjoterapię, terapię manualną oraz elementy
+                  pracy z ciałem, aby skutecznie docierać do źródła problemu, a
+                  nie tylko jego objawów. Każda terapia jest dopasowana
+                  indywidualnie do Twoich potrzeb.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Indywidualny plan terapii",
+                    "Bezpieczne i naturalne metody",
+                    "Spokojna, komfortowa atmosfera",
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-4 p-5 bg-card border border-border"
                     >
-                      Wyślij kolejną wiadomość
-                    </Button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm uppercase tracking-wider">Imię i nazwisko</Label>
-                        <Input 
-                          id="name" 
-                          name="name" 
-                          placeholder="Jan Kowalski" 
-                          required 
-                          className="border-border bg-transparent py-6"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-sm uppercase tracking-wider">Telefon</Label>
-                        <Input 
-                          id="phone" 
-                          name="phone" 
-                          type="tel" 
-                          placeholder="123 456 789" 
-                          required 
-                          className="border-border bg-transparent py-6"
-                        />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
+                      <p className="text-foreground font-medium">{item}</p>
                     </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-sm uppercase tracking-wider">Email</Label>
-                      <Input 
-                        id="email" 
-                        name="email" 
-                        type="email" 
-                        placeholder="jan@example.com" 
-                        required 
-                        className="border-border bg-transparent py-6"
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="subject" className="text-sm uppercase tracking-wider">Temat</Label>
-                      <Input 
-                        id="subject" 
-                        name="subject" 
-                        placeholder="Np. Umówienie wizyty - terapia manualna" 
-                        required 
-                        className="border-border bg-transparent py-6"
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-sm uppercase tracking-wider">Wiadomość</Label>
-                      <Textarea 
-                        id="message" 
-                        name="message" 
-                        placeholder="Opisz swoje dolegliwości lub zadaj pytanie..." 
-                        rows={5} 
-                        required 
-                        className="border-border bg-transparent resize-none"
-                      />
-                    </div>
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-primary hover:bg-primary/90 py-6 text-base"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        "Wysyłanie..."
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-5 w-5" />
-                          Wyślij wiadomość
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                )}
+                  ))}
+                   {" "}
+                </div>
               </div>
             </div>
           </div>
@@ -289,16 +246,18 @@ export default function ContactPage() {
         <div className="px-6 md:px-10 lg:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-accent-foreground mb-8 leading-tight">
-              Preferujesz rozmowę<br />telefoniczną?
+              Preferujesz rozmowę
+              <br />
+              telefoniczną?
             </h2>
-            
+
             <p className="text-xl text-accent-foreground/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Zadzwoń bezpośrednio - chętnie odpowiem na wszystkie pytania 
-              i pomogę umówić wizytę w dogodnym terminie.
+              Zadzwoń bezpośrednio - chętnie odpowiem na wszystkie pytania i
+              pomogę umówić wizytę w dogodnym terminie.
             </p>
-            
-            <a 
-              href="tel:660222440" 
+
+            <a
+              href="tel:660222440"
               className="inline-flex items-center gap-4 px-10 py-6 bg-accent-foreground text-accent hover:bg-accent-foreground/90 transition-colors text-lg font-medium group"
             >
               <Phone className="h-6 w-6" />
@@ -308,5 +267,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
