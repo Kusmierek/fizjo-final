@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Phone, ArrowUpRight } from "lucide-react";
+import { Phone, ArrowUpRight, Leaf } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -31,25 +30,65 @@ export function Navbar() {
         scrolled ? "glass border-b border-border/50" : ""
       }`}
     >
+      {/* Decorative grass/leaf elements */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+      {/* Left side leaves */}
+      <div className="absolute -bottom-2 left-[8%] opacity-40 hidden sm:block">
+        <Leaf className="h-5 w-5 text-primary rotate-[160deg]" />
+      </div>
+      <div className="absolute -bottom-1 left-[12%] opacity-25 hidden sm:block">
+        <Leaf className="h-3 w-3 text-primary rotate-[190deg]" />
+      </div>
+      <div className="absolute -bottom-3 left-[18%] opacity-35 hidden md:block">
+        <Leaf className="h-4 w-4 text-accent rotate-[170deg]" />
+      </div>
+
+      {/* Center leaves */}
+      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 opacity-20 hidden lg:block">
+        <Leaf className="h-4 w-4 text-primary rotate-180" />
+      </div>
+
+      {/* Right side leaves */}
+      <div className="absolute -bottom-2 right-[20%] opacity-30 hidden md:block">
+        <Leaf className="h-4 w-4 text-primary rotate-[200deg]" />
+      </div>
+      <div className="absolute -bottom-1 right-[15%] opacity-40 hidden sm:block">
+        <Leaf className="h-3 w-3 text-accent rotate-[175deg]" />
+      </div>
+      <div className="absolute -bottom-3 right-[10%] opacity-25 hidden sm:block">
+        <Leaf className="h-5 w-5 text-primary rotate-[185deg]" />
+      </div>
+
+      {/* Top decorative leaves (subtle) */}
+      <div className="absolute top-2 left-[5%] opacity-10 hidden lg:block">
+        <Leaf className="h-6 w-6 text-primary rotate-45" />
+      </div>
+      <div className="absolute top-3 right-[8%] opacity-10 hidden lg:block">
+        <Leaf className="h-5 w-5 text-primary -rotate-30" />
+      </div>
+
       <div className="flex items-center justify-between px-6 py-5 md:px-10 lg:px-16">
-        {/* Logo */}
+        {/* Logo with Nature Elements */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="relative w-10 h-10">
-            {/* TŁO */}
-            {/* LOGO */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src="/images/logo/logo.png"
-                alt="Fizjo z Natury logo"
-                width={30}
-                height={30}
-                className="object-contain"
-              />
-            </div>
+          <div className="relative">
+            <img
+              src="/images/logo/logo.png"
+              alt="Fizjo z Natury logo"
+              className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            />
+            {/* Decorative leaves around logo */}
+            <Leaf className="absolute -top-1 -right-2 h-3 w-3 text-primary/50 rotate-45 group-hover:rotate-[60deg] transition-transform duration-300" />
+            <Leaf className="absolute -bottom-1 -left-2 h-3 w-3 text-accent/50 -rotate-45 group-hover:-rotate-[60deg] transition-transform duration-300" />
           </div>
-          <span className="hidden sm:block font-serif text-lg text-foreground">
-            Fizjo z Natury
-          </span>
+          <div className="hidden sm:flex flex-col">
+            <span className="font-serif text-lg text-foreground leading-tight">
+              Fizjo z Natury
+            </span>
+            <span className="text-[10px] text-muted-foreground tracking-wider">
+              Fizjoterapia domowa
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

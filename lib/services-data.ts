@@ -33,10 +33,9 @@ export const services: Service[] = [
   {
     slug: "terapia-manualna",
     title: "Terapia manualna",
-    shortDescription:
-      "Zaawansowane techniki manualne przywracające prawidłową funkcję stawów i tkanek miękkich.",
+    shortDescription: "Holistyczna, nieinwazyjna metoda fizjoterapii",
     fullDescription:
-      "w odróżnieniu od leczenia konwencjonalnego – to jedna z metod fizjoterapii i jednocześnie terapia holistyczna, której celem jest nie tylko doraźne złagodzenie dolegliwości, ale możliwie trwała poprawa stanu zdrowia pacjenta poprzez odblokowanie stawów lub fragmentów kręgosłupa i przywrócenie w miarę normalnej ruchomości w leczonych obszarach. Terapia manualna to naturalna i nieinwazyjna metoda leczenia i diagnostyki stosowana w odwracalnych dysfunkcjach elementów tworzących układ ruchu, takich jak mięśnie (masaż, stretching, punkty spustowe), stawy (mobilizacje i manipulacje stawów w celu przywrócenia prawidłowych warunków pracy stawu), więzadła, kręgosłup, powięź i nerwy (neuromobilizacje), oraz pracy na płynach (drenaż zastojów i obrzęków). Do diagnozowania i leczenia wykorzystywane są dłonie i dotyk oraz różne rodzaje ucisku.",
+      "Jedna z metod fizjoterapii, a jednocześnie terapia holistyczna, której celem jest złagodzenie dolegliwości oraz możliwie trwała poprawa stanu zdrowia pacjenta poprzez odblokowanie stawów lub fragmentów kręgosłupa i przywrócenie w miarę normalnej ruchomości w leczonych obszarach. To naturalna i nieinwazyjna metoda leczenia i diagnostyki.",
     benefits: [
       "Szybka ulga w bólu",
       "Przywrócenie prawidłowej ruchomości stawów",
@@ -57,7 +56,7 @@ export const services: Service[] = [
     shortDescription:
       "Delikatna terapia przywracająca równowagę układu nerwowego poprzez pracę z rytmem czaszkowo-krzyżowym.",
     fullDescription:
-      "Bazuje ona na rytmie czaszkowo-krzyżowym, czyli rytmie przepływu płynu mózgowo-rdzeniowego w układzie obejmującym opony mózgowo-rdzeniowe, kości czaszki, kości kręgosłupa i kość krzyżowa.\n \n Zaburzenia cyrkulacji tego płynu oraz ruchu kości czaszki i kości krzyżowej mogą towarzyszyć wielu różnym schorzeniom, a ich poprawa w wyniku działań terapeutycznych pozwala skutecznie walczyć z chorobą często jeszcze przed wystąpieniem objawów. \n \n Terapia czaszkowo-krzyżowa jest terapią mięśniowo-powięziową: powoduje rozluźnienie powięzi, znosząc nieprawidłowe napięcia w mięśniach i narządach wewnętrznych. Jest metodą bezinwazyjną, łagodną, polegającą na przykładaniu rąk w określonych miejscach, kontrolowaniu funkcji systemu czaszkowo-krzyżowego i stymulacji zaburzonych obszarów. \n \n Nacisk rąk terapeuty jest bardzo lekki, aby ingerencja w krążenie płynu mózgowo-rdzeniowego była jak najdelikatniejsza. Dzięki temu terapeuta może wpływać na poprawę funkcji i żywotności tej części ciała, która była wcześniej zaburzona.",
+      "Metoda terapeutyczna stanowiąca rozwinięcie osteopatii. Terapia czaszkowo-krzyżowa jest nieinwazyjną pracą rozluźniającą struktury łącznotkankowe i znoszącą nieprawidłowe napięcia w mięśniach oraz narządach wewnętrznych. Terapeuta wpływa na układ czaszkowo-krzyżowy, w skład którego wchodzą m.in. kości czaszki, opony mózgu i rdzenia kręgowego oraz płyn mózgowo-rdzeniowy. \n \n Układ ten odpowiada za prawidłowy rozwój oraz funkcjonowanie ośrodkowego układu nerwowego, a tym samym wpływa na funkcje układu nerwowego, mięśniowego, powięziowego, kostnego, endokrynologicznego, pokarmowego, oddechowego i limfatycznego. Metoda jest bezinwazyjna i łagodna.",
     benefits: [
       "Głębokie odprężenie i relaks",
       "Redukcja stresu i napięcia",
@@ -105,7 +104,7 @@ export const services: Service[] = [
     shortDescription:
       "Terapia narządów wewnętrznych poprawiająca ich funkcjonowanie i wpływająca na cały organizm.",
     fullDescription:
-      "FTT, bazująca na Starosłowiańskim Masażu Brzucha, jest metodą holistycznej terapii funkcjonalnych zaburzeń narządów układów: żołądkowo-jelitowego i moczowo-płciowego. \n \n Istotą Funkcjonalnej Terapii Trzewi (FTT) jest głęboko rozumiana profilaktyka narządów wewnętrznych jamy brzusznej. Poprzez odpowiednie rozluźnianie: \n • mięśni gładkich trzewi, \n • zwieraczy jamy brzusznej, \n • więzadeł, krezek i otrzewnej, \n • napięć pomiędzy narządami wewnętrznymi, a stawami obwodowymi i kręgosłupem, dochodzi do poprawy m. in. cyrkulacji płynów ustrojowych (krew i limfa) czy pracygruczołów wydzielania wewnętrznego takich jak: wątroba (żółć) i trzustka (soktrzustkowy). \n \n Wszystko to wpływa na jakość trawienia i wchłaniania w jelitach:cienkim i grubym. W wyniku terapii może dojść do poprawy pracy nerek, pęcherza oczowego oraz organów płciowych: macicy, jajników, gruczołu mlekowego i prostaty. \n FTT generuje pozytywny wpływ na komunikację nerwową pomiędzy tzw. „mózgiem trzewnym” (jelita), a centralnym układem nerwowym. „Masaż brzucha” stosowany jako forma głębokiej profilaktyki zdrowia, przyczynia się do odtruwaniaorganizmu i zapobiega powstawaniu wielu patologii w okolicy jamy brzusznej.Stosowany podczas choroby wspomaga proces powrotu do zdrowia.",
+      "Funkcjonalna terapia trzewi jest stosowana zarówno w celach diagnostycznych jak i terapeutycznych. Korzyści płynące z masażu brzucha będą odczuwały osoby po operacjach (wycięcie wyrostka, pęcherzyka żółciowego), kobiety po cesarskim cięciu, osoby cierpiące na zgagę, refluks, wzdęcia, zaparcia, a także pacjenci z bólami odcinka lędźwiowego kręgosłupa jak również innych stawów obwodowych (bioder, kolan, a nawet barków).\n \n  Masaż jest w stanie rozluźnić powłoki brzuszne i wpłynąć korzystnie na pracę trzewi. Stosowany podczas choroby wspomaga proces powrotu do zdrowia.",
     benefits: [
       "Poprawa funkcji narządów wewnętrznych",
       "Lepsze trawienie i wchłanianie",
@@ -131,8 +130,9 @@ export const services: Service[] = [
     title: "Hirudoterapia medyczna",
     shortDescription:
       "Naturalna terapia z wykorzystaniem pijawek medycznych o szerokim działaniu leczniczym.",
+
     fullDescription:
-      "Hirudoterapia to sprawdzona od tysięcy lat metoda lecznicza wykorzystująca pijawki medyczne. Ślina pijawki zawiera ponad 100 substancji biologicznie czynnych, które działają przeciwzakrzepowo, przeciwzapalnie i przeciwbólowo. Wspomaga krążenie, oczyszcza organizm i wspiera procesy regeneracyjne.",
+      "To sprawdzona od tysięcy lat, skuteczna i naturalna metoda lecznicza wykorzystująca pijawki medyczne. Ślina pijawki zawiera ponad 547 przebadanych substancji biologicznie czynnych, które działają przeciwzakrzepowo, przeciwzapalnie i przeciwbólowo. Wspomaga krążenie, oczyszcza organizm i wspiera procesy regeneracyjne.",
     benefits: [
       "Poprawa mikrokrążenia",
       "Działanie przeciwzapalne i przeciwbólowe",
@@ -140,11 +140,11 @@ export const services: Service[] = [
       "Wspomaganie gojenia ran",
     ],
     indications: [
-      "Żylaki i niewydolność żylna",
-      "Choroby stawów i reumatyczne",
-      "Nadciśnienie tętnicze",
-      "Migreny i bóle głowy",
-      "Problemy skórne",
+      "Zaburzenia układu nerwowego - neuropatie / nerwobóle / rwa barkowa / rwa kulszowa / zapalenie nerwów",
+      "Choroby skóry - łuszczyca / trądzik / egzema / owrzodzenia / trudno gojące się rany / blizny",
+      "Problemy Ginekologiczne - bolesne miesiączki / endometrioza / torbiele jajników / zaburzenia hormonalne",
+      "Problemy urologiczne - przewlekłe zapalnie prostaty / nietrzymanie moczu",
+      "Stany po urazach i operacjach - przyspieszenie regeneracji / redukcja blizn i zrostów",
     ],
     icon: "droplet",
   },
@@ -154,7 +154,7 @@ export const services: Service[] = [
     shortDescription:
       "Tradycyjna metoda terapeutyczna wykorzystująca podciśnienie do stymulacji tkanek.",
     fullDescription:
-      "Leczenie za pomocą baniek, czyli inaczej terapia próżniowa to powszechnie znana od tysięcy lat naturalna metoda leczenia, pomocna w zwalczaniu wielu schorzeń wg medycyny starosłowiańskiej, arabskiej i chińskiej. Ostatnimi czasy, terapie bańkami (jak i same bańki) niesamowicie ewoluowały, dostarczając wiele nowych możliwości terapeutycznych w medycynie oraz sporcie. Bańki działają przeciwzapalnie, przeciwdziałają zrostom, usuwają zastoje i obrzmienia. \n\n W każdej technice stawiania baniek następuje bodziec próżniowy, ale nie znaczy to, że efekt terapeutyczny zawsze będzie ten sam. Niezmiernie ważne jest aby dostosować rodzaj baniek/techniki/miejsc na ciele do jednostki chorobowej, czy zamierzonego efektu terapeutycznego. \n\n Jak działają bańki? \n\n • W miejscach, w których stawiane są bańki powstaje przekrwienie, dochodzi do pęknięcia podskórnych naczyń krwionośnych, a w związku z tym wynaczynia się krew. Dzięki temu nasze ciało odbiera to działanie jako bodziec do wytworzenia dużej ilości nowych ciał odpornościowych. Taka reakcja jest nazywana w medycynie autohemoterapią lub autoszczepionką. Bańki silnie pobudzają organizm do walki z infekcjami i zapobiegają ich powstawaniu, a także namnażaniu wirusów. \n\n • Poprzez podrażnienie receptorów skóry mięśni i powięzi bańki wpływają na rozszerzenie naczyń krwionośnych. Ma to działanie przeciwbólowe, odkwasza, oczyszcza chore tkanki, dożywia je i natlenia. Pobudza się przemiana materii, więc organizm szybciej wydala szkodliwe substancje będące przyczyną dolegliwości bólowych i stanów zapalnych. \n\n • Bańki wpływają na rozluźnienie mięśni, eliminują napięcia mięśniowe i skurcze, stymulują gojenie i zmniejszają nadmierny nacisk na receptory czuciowe w tkankach miękkich. Przynoszą ulgę w przypadku bólu napiętych mięśni pleców, karku oraz szyi. \n\n • Działanie baniek jest wielokierunkowe, po chwili po postawieniu baniek, pacjent odczuwa stan relaksu, co pozwala znieść zwiększoną pobudliwość wegetatywnego układu nerwowego, dlatego też po zabiegu pacjent powinien odpocząć 10 min. \n\n • Po postawieniu baniek obserwuje się wzrost odporności na zakażenia. W większości przypadków proces zdrowienia ulega znaczącemu przyspieszeniu lub symptomy pacjenta zostają istotnie zmniejszone.",
+      "Jak wiadomo, bańki silnie pobudzają organizm do walki z infekcjami i mogą zapobiegać ich powstawaniu oraz namnażaniu wirusów. Poprzez podrażnienie receptorów skóry, mięśni i powięzi wpływają na rozszerzenie naczyń krwionośnych. Mają działanie przeciwbólowe, wspierają oczyszczanie tkanek, poprawiają ich odżywienie i natlenienie. \n \n Pobudzają przemianę materii, dzięki czemu organizm szybciej usuwa szkodliwe substancje będące przyczyną dolegliwości bólowych i stanów zapalnych. Bańki wpływają również na rozluźnienie mięśni, eliminują napięcia mięśniowe i skurcze. Przynoszą ulgę w przypadku bólu napiętych mięśni pleców, karku oraz szyi.",
     benefits: [
       "Poprawa krążenia krwi i limfy",
       "Rozluźnienie napiętych mięśni",
@@ -169,6 +169,29 @@ export const services: Service[] = [
       "Zmęczenie i osłabienie",
     ],
     icon: "circle",
+  },
+  {
+    slug: "rozluznianie-miesniowo-powieziowe",
+    title: "Rozluźnianie mięśniowo-powięziowe",
+    shortDescription: "Technika manualna ukierunkowana na redukcję napięć.",
+    fullDescription:
+      "Dzięki rozluźnianiu mięśniowo-powięziowemu można zmniejszyć dolegliwości bólowe, przywrócić prawidłową przesuwalność struktur względem siebie, przywrócić balans i łatwość funkcjonowania tkanek, poprawić ruchomość odcinkową, zmniejszyć sztywność i uczucie napięcia mięśni oraz bóle głowy. \n \n To również świetne przygotowanie pacjenta z uszkodzeniami OUN do terapii m.in. Bobath czy Vojta. Techniki mięśniowo-powięziowe można również wykorzystać m.in. w takich problemach jak asymetrie ułożeniowe, kręcz, skolioza, problemy z napięciem mięśniowym czy szeroko pojęte wady postawy.",
+    benefits: [
+      "Redukcja napięć mięśniowo-powięziowych",
+      "Zmniejszenie dolegliwości bólowych",
+      "Poprawa ruchomości tkanek i stawów",
+      "Zmniejszenie sztywności i uczucia napięcia",
+      "Poprawa ogólnej funkcji układu ruchu",
+    ],
+    indications: [
+      "Przewlekłe napięcia mięśniowe",
+      "Bóle pleców i karku",
+      "Ograniczenia ruchomości",
+      "Bóle głowy pochodzenia napięciowego",
+      "Wady postawy",
+      "Asymetrie ułożeniowe",
+    ],
+    icon: "stretch",
   },
 ];
 

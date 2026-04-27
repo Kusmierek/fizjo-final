@@ -14,17 +14,9 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-function FloatingShapes() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-20 left-[10%] w-64 h-64 bg-primary/10 animate-blob animation-delay-200" />
-      <div className="absolute top-40 right-[15%] w-48 h-48 bg-accent/10 animate-blob animation-delay-400" />
-      <div className="absolute bottom-32 left-[20%] w-32 h-32 bg-primary/5 animate-blob animation-delay-600" />
-    </div>
-  );
-}
+import { HeroVariantB } from "@/components/hero-variants";
+// Dostępne warianty: HeroVariantA, HeroVariantB, HeroVariantC
+// import { HeroVariantA, HeroVariantB, HeroVariantC } from "@/components/hero-variants"
 
 function ServiceCard({
   service,
@@ -37,14 +29,8 @@ function ServiceCard({
   const Icon = icons[index % icons.length];
 
   return (
-    <Link
-      href={`/uslugi/${service.slug}`}
-      className={cn(
-        "group relative block lg:col-span-3",
-        index === 4 && "lg:col-start-2",
-      )}
-    >
-      <div className="relative bg-card border border-border/50 p-8 hover-lift overflow-hidden h-80">
+    <Link href={`/uslugi/${service.slug}`} className="group relative block">
+      <div className="relative bg-card border border-border/50 p-8 hover-lift overflow-hidden h-[320px]">
         {/* Number */}
         <span className="absolute top-6 right-6 text-7xl font-serif text-muted/50 font-bold leading-none">
           {String(index + 1).padStart(2, "0")}
@@ -132,103 +118,26 @@ export default function HomePage() {
         </a>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-        <FloatingShapes />
-
-        <div className="relative px-6 md:px-10 lg:px-16 py-32">
-          <div className="max-w-7xl mx-auto">
-            {/* Tagline */}
-            <div
-              className={`flex items-center gap-3 mb-8 ${mounted ? "animate-fade-up" : "opacity-0"}`}
-            >
-              <div className="w-12 h-px bg-accent" />
-              <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">
-                Fizjoterapia w domu pacjenta
-              </span>
-            </div>
-
-            {/* Main Heading */}
-            <div className="relative mb-12">
-              <h1
-                className={`font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] font-medium leading-[0.85] tracking-tight ${mounted ? "animate-fade-up animation-delay-200" : "opacity-0"}`}
-                style={{ opacity: mounted ? undefined : 0 }}
-              >
-                <span className="text-primary">Fizjo</span>
-                <br />
-                <span className="text-stroke text-foreground">z Natury</span>
-              </h1>
-
-              {/* Floating badge */}
-              <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden xl:block animate-float">
-                <div className="bg-accent text-accent-foreground px-6 py-4 rotate-12">
-                  <p className="text-xs uppercase tracking-wider mb-1">
-                    Magdalena
-                  </p>
-                  <p className="font-serif text-lg">Batruch-Skoczypiec</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Description & CTA */}
-            <div className="grid lg:grid-cols-2 gap-12 items-end">
-              <p
-                className={`text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl ${mounted ? "animate-fade-up animation-delay-400" : "opacity-0"}`}
-                style={{ opacity: mounted ? undefined : 0 }}
-              >
-                Holistyczne podejście do zdrowia, gdzie traktuję człowieka jako
-                całość. Profesjonalna fizjoterapia w komforcie Twojego domu.
-              </p>
-
-              <div
-                className={`flex flex-col sm:flex-row gap-4 lg:justify-end ${mounted ? "animate-fade-up animation-delay-600" : "opacity-0"}`}
-                style={{ opacity: mounted ? undefined : 0 }}
-              >
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base group"
-                >
-                  <a href="tel:660222440" className="flex items-center gap-3">
-                    <Phone className="h-5 w-5" />
-                    <span>Umów wizytę</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-foreground/20 hover:bg-foreground/5 px-8 py-6 text-base bg-transparent"
-                >
-                  <Link href="#uslugi">Poznaj usługi</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-xs text-muted-foreground uppercase tracking-wider">
-            Przewiń
-          </span>
-          <div className="w-px h-12 bg-border relative overflow-hidden">
-            <div
-              className="absolute top-0 left-0 w-full h-1/2 bg-accent animate-marquee"
-              style={{ animationDuration: "2s" }}
-            />
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - zmień na HeroVariantA, HeroVariantB lub HeroVariantC */}
+      <HeroVariantB mounted={mounted} />
 
       {/* Services Section */}
-      <section id="uslugi" className="py-24 md:py-32 bg-muted/30">
-        <div className="px-6 md:px-10 lg:px-16">
+      <section
+        id="uslugi"
+        className="py-24 md:py-32 bg-muted/30 relative overflow-hidden"
+      >
+        {/* Decorative leaves */}
+        <Leaf className="absolute top-12 left-[5%] h-16 w-16 text-primary/10 rotate-45 hidden lg:block" />
+        <Leaf className="absolute top-32 right-[8%] h-12 w-12 text-accent/10 -rotate-12 hidden lg:block" />
+        <Leaf className="absolute bottom-24 left-[10%] h-10 w-10 text-primary/10 rotate-[160deg] hidden md:block" />
+        <Leaf className="absolute bottom-16 right-[15%] h-14 w-14 text-primary/5 rotate-[200deg] hidden lg:block" />
+
+        <div className="px-6 md:px-10 lg:px-16 relative">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-              <div>
+              <div className="relative">
+                <Leaf className="absolute -left-8 top-0 h-6 w-6 text-primary/30 rotate-[135deg] hidden md:block" />
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
                     Usługi
@@ -248,7 +157,7 @@ export default function HomePage() {
             </div>
 
             {/* Services Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((service, index) => (
                 <ServiceCard
                   key={service.slug}
@@ -262,8 +171,14 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 md:py-32 bg-primary overflow-hidden">
-        <div className="px-6 md:px-10 lg:px-16">
+      <section className="py-24 md:py-32 bg-primary overflow-hidden relative">
+        {/* Decorative leaves - light on dark background */}
+        <Leaf className="absolute top-8 left-[8%] h-12 w-12 text-primary-foreground/10 rotate-45 hidden md:block" />
+        <Leaf className="absolute top-16 right-[12%] h-10 w-10 text-primary-foreground/5 -rotate-30 hidden lg:block" />
+        <Leaf className="absolute bottom-12 left-[20%] h-14 w-14 text-primary-foreground/10 rotate-[170deg] hidden lg:block" />
+        <Leaf className="absolute bottom-8 right-[5%] h-8 w-8 text-primary-foreground/5 rotate-[200deg] hidden md:block" />
+
+        <div className="px-6 md:px-10 lg:px-16 relative">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               <StatBlock
@@ -294,6 +209,11 @@ export default function HomePage() {
       {/* About Preview */}
       <section className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-muted/30 hidden lg:block" />
+
+        {/* Decorative leaves */}
+        <Leaf className="absolute top-20 left-[3%] h-20 w-20 text-primary/5 rotate-[30deg] hidden lg:block" />
+        <Leaf className="absolute top-1/3 right-[3%] h-10 w-10 text-accent/10 -rotate-45 hidden md:block" />
+        <Leaf className="absolute bottom-32 left-[15%] h-8 w-8 text-primary/10 rotate-[145deg] hidden md:block" />
 
         <div className="px-6 md:px-10 lg:px-16 relative">
           <div className="max-w-7xl mx-auto">
@@ -364,6 +284,12 @@ export default function HomePage() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
+
+        {/* Decorative leaves - light on dark */}
+        <Leaf className="absolute top-16 left-[10%] h-16 w-16 text-background/5 rotate-[60deg] hidden lg:block" />
+        <Leaf className="absolute top-1/2 right-[5%] h-12 w-12 text-background/5 -rotate-30 hidden md:block" />
+        <Leaf className="absolute bottom-20 left-[25%] h-10 w-10 text-accent/10 rotate-[180deg] hidden lg:block" />
+        <Leaf className="absolute bottom-12 right-[20%] h-14 w-14 text-background/5 rotate-[210deg] hidden md:block" />
 
         <div className="px-6 md:px-10 lg:px-16 relative">
           <div className="max-w-4xl mx-auto text-center">
