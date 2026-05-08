@@ -30,8 +30,8 @@ function ServiceCard({
   const Icon = icons[index % icons.length];
 
   return (
-    <Link href={`/uslugi/${service.slug}`} className="group relative block">
-      <div className="relative bg-card border border-border/50 p-5 sm:p-6 md:p-8 hover-lift overflow-hidden min-h-[280px] sm:min-h-[300px] md:min-h-[320px] flex flex-col">
+    <Link href={`/uslugi/${service.slug}`} className="group relative block h-full">
+      <div className="relative bg-card border border-border/50 p-5 sm:p-6 md:p-8 hover-lift overflow-hidden h-full flex flex-col">
         {/* Number */}
         <span className="absolute top-4 right-4 sm:top-6 sm:right-6 text-5xl sm:text-6xl md:text-7xl font-serif text-muted/50 font-bold leading-none">
           {String(index + 1).padStart(2, "0")}
@@ -43,7 +43,7 @@ function ServiceCard({
             <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary group-hover:text-accent transition-colors" />
           </div>
 
-          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors leading-tight">
+          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[2.5em] sm:min-h-[2.75em]">
             {service.title}
           </h3>
 
@@ -158,7 +158,7 @@ export default function HomePage() {
             </div>
 
             {/* Services Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
               {services.map((service, index) => (
                 <ServiceCard
                   key={service.slug}

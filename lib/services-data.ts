@@ -37,9 +37,8 @@ export const services: Service[] = [
     ],
     icon: "stethoscope",
     images: [
-      "/images/gallery/therapist-portrait.jpg",
-      "/images/gallery/therapy-head.jpg",
-      "/images/gallery/back-massage.jpg",
+      "/images/services/diagnostyka-1.jpg",
+      "/images/services/diagnostyka-2.jpg",
     ],
   },
   {
@@ -62,9 +61,8 @@ export const services: Service[] = [
     ],
     icon: "hand",
     images: [
-      "/images/gallery/back-massage.jpg",
-      "/images/gallery/therapy-head.jpg",
-      "/images/gallery/massage-oil.jpg",
+      "/images/services/manualna-1.jpg",
+      "/images/services/manualna-2.jpg",
     ],
   },
   {
@@ -93,9 +91,8 @@ export const services: Service[] = [
     ],
     icon: "brain",
     images: [
-      "/images/gallery/therapy-head.jpg",
-      "/images/gallery/therapist-portrait.jpg",
-      "/images/gallery/back-massage.jpg",
+      "/images/services/czaszkowa-1.jpg",
+      "/images/services/czaszkowa-2.jpg",
     ],
     articles: [
       {
@@ -158,9 +155,9 @@ export const services: Service[] = [
     ],
     icon: "heart-pulse",
     images: [
-      "/images/gallery/belly-therapy.jpg",
-      "/images/gallery/therapist-portrait.jpg",
-      "/images/gallery/therapy-head.jpg",
+      "/images/services/trzewia-1.jpg",
+      "/images/services/trzewia-2.jpg",
+      "/images/services/trzewia-3.jpg",
     ],
   },
   {
@@ -186,9 +183,10 @@ export const services: Service[] = [
     ],
     icon: "droplet",
     images: [
-      "/images/gallery/therapist-portrait.jpg",
-      "/images/gallery/therapy-head.jpg",
-      "/images/gallery/massage-oil.jpg",
+      "/images/services/hirudoterapia-1.jpg",
+      "/images/services/hirudoterapia-2.jpg",
+      "/images/services/hirudoterapia-3.jpg",
+      "/images/services/hirudoterapia-4.jpg",
     ],
     articles: [
       {
@@ -219,9 +217,8 @@ export const services: Service[] = [
     ],
     icon: "circle",
     images: [
-      "/images/gallery/back-massage.jpg",
-      "/images/gallery/massage-oil.jpg",
-      "/images/gallery/therapist-portrait.jpg",
+      "/images/services/banki-1.jpg",
+      "/images/services/banki-2.jpg",
     ],
   },
   {
@@ -247,9 +244,9 @@ export const services: Service[] = [
     ],
     icon: "stretch",
     images: [
-      "/images/gallery/back-massage.jpg",
-      "/images/gallery/therapy-head.jpg",
-      "/images/gallery/belly-therapy.jpg",
+      "/images/services/rozluznianie-1.jpg",
+      "/images/services/rozluznianie-2.jpg",
+      "/images/services/rozluznianie-3.jpg",
     ],
   },
 ];
