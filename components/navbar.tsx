@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, ArrowUpRight, Leaf } from "lucide-react";
 import {
   Sheet,
@@ -15,6 +16,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname();
+  
+  // Check if we're on a service page (dark hero background)
+  const isServicePage = pathname?.startsWith("/uslugi/");
+  const isLightMode = isServicePage && !scrolled;
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -82,10 +88,10 @@ export function Navbar() {
             <Leaf className="absolute -bottom-1 -left-2 h-3 w-3 text-accent/50 -rotate-45 group-hover:-rotate-[60deg] transition-transform duration-300" />
           </div>
           <div className="hidden sm:flex flex-col">
-            <span className="font-serif text-lg text-foreground leading-tight">
+            <span className={`font-serif text-lg leading-tight transition-colors ${isLightMode ? "text-white" : "text-foreground"}`}>
               Fizjo z Natury
             </span>
-            <span className="text-[10px] text-muted-foreground tracking-wider">
+            <span className={`text-[10px] tracking-wider transition-colors ${isLightMode ? "text-white/70" : "text-muted-foreground"}`}>
               Fizjoterapia domowa
             </span>
           </div>
@@ -95,17 +101,21 @@ export function Navbar() {
         <nav className="hidden lg:flex items-center gap-1">
           {[
             { href: "/", label: "Start" },
-            { href: "/#uslugi", label: "Usługi" },
+            { href: "/#uslugi", label: "Uslugi" },
             { href: "/o-mnie", label: "O mnie" },
             { href: "/kontakt", label: "Kontakt" },
           ].map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="relative px-5 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group"
+              className={`relative px-5 py-2 text-sm font-medium transition-colors group ${
+                isLightMode 
+                  ? "text-white/80 hover:text-white" 
+                  : "text-foreground/80 hover:text-foreground"
+              }`}
             >
               {item.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent group-hover:w-3/4 transition-all duration-300" />
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 group-hover:w-3/4 transition-all duration-300 ${isLightMode ? "bg-white" : "bg-accent"}`} />
             </Link>
           ))}
         </nav>
@@ -127,13 +137,13 @@ export function Navbar() {
                 aria-label="Menu"
               >
                 <span
-                  className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+                  className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""} ${isLightMode ? "bg-white" : "bg-foreground"}`}
                 />
                 <span
-                  className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? "opacity-0" : ""}`}
+                  className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? "opacity-0" : ""} ${isLightMode ? "bg-white" : "bg-foreground"}`}
                 />
                 <span
-                  className={`w-6 h-0.5 bg-foreground transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                  className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""} ${isLightMode ? "bg-white" : "bg-foreground"}`}
                 />
               </button>
             </SheetTrigger>

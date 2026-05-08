@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Check,
   Sparkles,
+  ExternalLink,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -111,7 +112,7 @@ export default async function ServicePage({
 
               {/* Image carousel */}
               <div className="w-full lg:w-2/5 order-1 lg:order-2 flex-shrink-0">
-                <div className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto lg:ml-auto lg:mr-0">
+                <div className="w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-sm mx-auto lg:ml-auto lg:mr-0">
                   <ServiceImageCarousel
                     images={service.images}
                     title={service.title}
@@ -192,6 +193,35 @@ export default async function ServicePage({
                     </ul>
                   </div>
                 </div>
+
+                {/* Articles */}
+                {service.articles && service.articles.length > 0 && (
+                  <div className="mt-16">
+                    <div className="flex items-center gap-3 mb-8">
+                      <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
+                        Ciekawe artykuly
+                      </span>
+                      <div className="w-12 h-px bg-accent" />
+                    </div>
+
+                    <div className="space-y-3">
+                      {service.articles.map((article, index) => (
+                        <a
+                          key={index}
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-between p-4 sm:p-5 border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                        >
+                          <span className="text-sm sm:text-base text-foreground group-hover:text-primary transition-colors pr-4">
+                            {article.title}
+                          </span>
+                          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground group-hover:text-primary flex-shrink-0 transition-colors" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Sidebar */}

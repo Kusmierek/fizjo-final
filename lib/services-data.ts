@@ -1,3 +1,8 @@
+export interface ServiceArticle {
+  title: string;
+  url: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -7,6 +12,7 @@ export interface Service {
   indications: string[];
   icon: string;
   images: string[];
+  articles?: ServiceArticle[];
 }
 
 export const services: Service[] = [
@@ -90,6 +96,12 @@ export const services: Service[] = [
       "/images/gallery/therapy-head.jpg",
       "/images/gallery/therapist-portrait.jpg",
       "/images/gallery/back-massage.jpg",
+    ],
+    articles: [
+      {
+        title: "Sila plynaca z ciala - o terapii czaszkowo-krzyzowej",
+        url: "https://www.niebieskalinia.pl/aktualnosci/artykuly-niebieskiej-linii/sila-plynaca-z-ciala-o-terapii-czaszkowokrzyzowej-41532024",
+      },
     ],
   },
   {
@@ -177,6 +189,12 @@ export const services: Service[] = [
       "/images/gallery/therapist-portrait.jpg",
       "/images/gallery/therapy-head.jpg",
       "/images/gallery/massage-oil.jpg",
+    ],
+    articles: [
+      {
+        title: "Jak sie przygotowac do zabiegu hirudoterapii",
+        url: "https://terapiapijawka.pl/dla-pacjentow/przygotowanie-do-zabiegu/",
+      },
     ],
   },
   {
