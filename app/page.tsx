@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/services-data";
 import {
@@ -30,29 +31,29 @@ function ServiceCard({
 
   return (
     <Link href={`/uslugi/${service.slug}`} className="group relative block">
-      <div className="relative bg-card border border-border/50 p-8 hover-lift overflow-hidden h-[320px]">
+      <div className="relative bg-card border border-border/50 p-5 sm:p-6 md:p-8 hover-lift overflow-hidden min-h-[280px] sm:min-h-[300px] md:min-h-[320px] flex flex-col">
         {/* Number */}
-        <span className="absolute top-6 right-6 text-7xl font-serif text-muted/50 font-bold leading-none">
+        <span className="absolute top-4 right-4 sm:top-6 sm:right-6 text-5xl sm:text-6xl md:text-7xl font-serif text-muted/50 font-bold leading-none">
           {String(index + 1).padStart(2, "0")}
         </span>
 
         {/* Content */}
-        <div className="relative">
-          <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-            <Icon className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
+        <div className="relative flex flex-col flex-1">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-accent/20 transition-colors flex-shrink-0">
+            <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary group-hover:text-accent transition-colors" />
           </div>
 
-          <h3 className="font-serif text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">
+          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors leading-tight">
             {service.title}
           </h3>
 
-          <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
+          <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3 flex-1">
             {service.shortDescription}
           </p>
 
-          <div className="flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
-            <span>Dowiedz się więcej</span>
-            <ArrowUpRight className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-primary group-hover:text-accent transition-colors mt-auto">
+            <span>Dowiedz sie wiecej</span>
+            <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform flex-shrink-0" />
           </div>
         </div>
 
@@ -257,17 +258,17 @@ export default function HomePage() {
               </div>
 
               <div className="relative">
-                <div className="aspect-square bg-muted relative overflow-hidden">
-                  {/* Decorative elements */}
-                  <div className="absolute inset-8 border border-primary/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Leaf className="h-24 w-24 text-primary/20 mx-auto mb-6" />
-                      <p className="font-serif text-2xl text-foreground/60">
-                        Zdrowie z natury
-                      </p>
-                    </div>
-                  </div>
+                <div className="aspect-[3/4] bg-muted relative overflow-hidden">
+                  <Image
+                    src="/images/magdalena-portrait.jpg"
+                    alt="Magdalena Batruch-Skoczypiec - fizjoterapeutka"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                  {/* Decorative frame */}
+                  <div className="absolute inset-6 border border-background/20 pointer-events-none" />
 
                   {/* Corner accent */}
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent" />

@@ -1,3 +1,8 @@
+export interface ServiceArticle {
+  title: string;
+  url: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -6,6 +11,8 @@ export interface Service {
   benefits: string[];
   indications: string[];
   icon: string;
+  images: string[];
+  articles?: ServiceArticle[];
 }
 
 export const services: Service[] = [
@@ -29,6 +36,11 @@ export const services: Service[] = [
       "Przewlekłe dolegliwości bólowe",
     ],
     icon: "stethoscope",
+    images: [
+      "/images/gallery/therapist-portrait.jpg",
+      "/images/gallery/therapy-head.jpg",
+      "/images/gallery/back-massage.jpg",
+    ],
   },
   {
     slug: "terapia-manualna",
@@ -49,6 +61,11 @@ export const services: Service[] = [
       "Rwa kulszowa i barkowa",
     ],
     icon: "hand",
+    images: [
+      "/images/gallery/back-massage.jpg",
+      "/images/gallery/therapy-head.jpg",
+      "/images/gallery/massage-oil.jpg",
+    ],
   },
   {
     slug: "terapia-czaszkowo-krzyzowa",
@@ -75,6 +92,17 @@ export const services: Service[] = [
       "Zaburzenia trawienia",
     ],
     icon: "brain",
+    images: [
+      "/images/gallery/therapy-head.jpg",
+      "/images/gallery/therapist-portrait.jpg",
+      "/images/gallery/back-massage.jpg",
+    ],
+    articles: [
+      {
+        title: "Sila plynaca z ciala - o terapii czaszkowo-krzyzowej",
+        url: "https://www.niebieskalinia.pl/aktualnosci/artykuly-niebieskiej-linii/sila-plynaca-z-ciala-o-terapii-czaszkowokrzyzowej-41532024",
+      },
+    ],
   },
   {
     slug: "masaz-breussa",
@@ -97,6 +125,11 @@ export const services: Service[] = [
       "Napięcie mięśni przykręgosłupowych",
     ],
     icon: "spine",
+    images: [
+      "/images/gallery/massage-oil.jpg",
+      "/images/gallery/back-massage.jpg",
+      "/images/gallery/therapy-head.jpg",
+    ],
   },
   {
     slug: "funkcjonalna-terapia-trzewi",
@@ -124,6 +157,11 @@ export const services: Service[] = [
       "Dysfunkcje stawów obwodowych kończyn górnych i dolnych oraz stawów kręgosłupa",
     ],
     icon: "heart-pulse",
+    images: [
+      "/images/gallery/belly-therapy.jpg",
+      "/images/gallery/therapist-portrait.jpg",
+      "/images/gallery/therapy-head.jpg",
+    ],
   },
   {
     slug: "hirudoterapia",
@@ -147,6 +185,17 @@ export const services: Service[] = [
       "Stany po urazach i operacjach - przyspieszenie regeneracji / redukcja blizn i zrostów",
     ],
     icon: "droplet",
+    images: [
+      "/images/gallery/therapist-portrait.jpg",
+      "/images/gallery/therapy-head.jpg",
+      "/images/gallery/massage-oil.jpg",
+    ],
+    articles: [
+      {
+        title: "Jak sie przygotowac do zabiegu hirudoterapii",
+        url: "https://terapiapijawka.pl/dla-pacjentow/przygotowanie-do-zabiegu/",
+      },
+    ],
   },
   {
     slug: "banki-w-fizjoterapii",
@@ -169,6 +218,11 @@ export const services: Service[] = [
       "Zmęczenie i osłabienie",
     ],
     icon: "circle",
+    images: [
+      "/images/gallery/back-massage.jpg",
+      "/images/gallery/massage-oil.jpg",
+      "/images/gallery/therapist-portrait.jpg",
+    ],
   },
   {
     slug: "rozluznianie-miesniowo-powieziowe",
@@ -192,6 +246,11 @@ export const services: Service[] = [
       "Asymetrie ułożeniowe",
     ],
     icon: "stretch",
+    images: [
+      "/images/gallery/back-massage.jpg",
+      "/images/gallery/therapy-head.jpg",
+      "/images/gallery/belly-therapy.jpg",
+    ],
   },
 ];
 
