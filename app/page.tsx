@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/services-data";
 import {
@@ -257,17 +258,17 @@ export default function HomePage() {
               </div>
 
               <div className="relative">
-                <div className="aspect-square bg-muted relative overflow-hidden">
-                  {/* Decorative elements */}
-                  <div className="absolute inset-8 border border-primary/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Leaf className="h-24 w-24 text-primary/20 mx-auto mb-6" />
-                      <p className="font-serif text-2xl text-foreground/60">
-                        Zdrowie z natury
-                      </p>
-                    </div>
-                  </div>
+                <div className="aspect-[3/4] bg-muted relative overflow-hidden">
+                  <Image
+                    src="/images/magdalena-portrait.jpg"
+                    alt="Magdalena Batruch-Skoczypiec - fizjoterapeutka"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                  {/* Decorative frame */}
+                  <div className="absolute inset-6 border border-background/20 pointer-events-none" />
 
                   {/* Corner accent */}
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent" />
