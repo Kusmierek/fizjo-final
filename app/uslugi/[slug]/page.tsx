@@ -80,6 +80,16 @@ export default async function ServicePage({
 
             {/* Title */}
             <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+              {/* Mobile image - horizontal crop above text */}
+              <div className="lg:hidden">
+                <ServiceImageCarousel
+                  images={service.images}
+                  title={service.title}
+                  className="shadow-xl"
+                  mobileAspect
+                />
+              </div>
+
               {/* Text content */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -108,16 +118,6 @@ export default async function ServicePage({
                     <span>Umow wizyte</span>
                   </a>
                 </Button>
-
-                {/* Mobile image - horizontal crop below CTA */}
-                <div className="mt-8 lg:hidden">
-                  <ServiceImageCarousel
-                    images={service.images}
-                    title={service.title}
-                    className="shadow-xl"
-                    mobileAspect
-                  />
-                </div>
               </div>
 
               {/* Image carousel - desktop only, vertical */}
