@@ -62,12 +62,12 @@ export function ServiceImageCarousel({
         <CarouselContent className="-ml-0">
           {images.map((image, index) => (
             <CarouselItem key={index} className="pl-0">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
                 <Image
                   src={image}
                   alt={`${title} - zdjecie ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
                   loading="eager"
