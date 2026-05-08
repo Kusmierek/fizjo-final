@@ -78,42 +78,43 @@ export default async function ServicePage({
             </Link>
 
             {/* Title */}
-            <div className="grid lg:grid-cols-2 gap-12 items-end">
-              <div>
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+              <div className="lg:col-span-3">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
-                    Usługa {String(currentIndex + 1).padStart(2, "0")}/
+                    Usluga {String(currentIndex + 1).padStart(2, "0")}/
                     {String(services.length).padStart(2, "0")}
                   </span>
                   <div className="w-12 h-px bg-accent" />
                 </div>
 
-                <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight mb-8">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
                   {service.title}
                 </h1>
 
-                <p className="text-xl text-primary-foreground/70 leading-relaxed max-w-xl">
+                <p className="text-lg text-primary-foreground/70 leading-relaxed max-w-lg mb-8">
                   {service.shortDescription}
                 </p>
+
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base shadow-lg"
+                >
+                  <a href="tel:660222440" className="flex items-center gap-3">
+                    <Phone className="h-5 w-5" />
+                    <span>Umow wizyte</span>
+                  </a>
+                </Button>
               </div>
-              <div className="w-full flex flex-col items-center lg:items-end gap-6">
-                <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0">
+              <div className="lg:col-span-2 w-full">
+                <div className="w-full max-w-xs md:max-w-sm lg:max-w-md mx-auto lg:ml-auto lg:mr-0">
                   <ServiceImageCarousel
                     images={service.images}
                     title={service.title}
                     className="shadow-2xl"
                   />
                 </div>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 py-7 text-lg shadow-lg"
-                >
-                  <a href="tel:660222440" className="flex items-center gap-3">
-                    <Phone className="h-6 w-6" />
-                    <span>Umow wizyte</span>
-                  </a>
-                </Button>
               </div>
             </div>
           </div>

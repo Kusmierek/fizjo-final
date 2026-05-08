@@ -62,13 +62,13 @@ export function ServiceImageCarousel({
         <CarouselContent className="-ml-0">
           {images.map((image, index) => (
             <CarouselItem key={index} className="pl-0">
-              <div className="relative aspect-[3/4] md:aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
                 <Image
                   src={image}
                   alt={`${title} - zdjecie ${index + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+                  sizes="(max-width: 768px) 100vw, 400px"
                   priority
                   loading="eager"
                 />
@@ -82,17 +82,17 @@ export function ServiceImageCarousel({
           <>
             <button
               onClick={scrollPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-background/90 backdrop-blur-sm rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-background hover:scale-110"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center bg-background/90 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-background hover:scale-110"
               aria-label="Poprzednie zdjecie"
             >
-              <ChevronLeft className="h-6 w-6 text-foreground" />
+              <ChevronLeft className="h-5 w-5 text-foreground" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-background/90 backdrop-blur-sm rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-background hover:scale-110"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center bg-background/90 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-background hover:scale-110"
               aria-label="Nastepne zdjecie"
             >
-              <ChevronRight className="h-6 w-6 text-foreground" />
+              <ChevronRight className="h-5 w-5 text-foreground" />
             </button>
           </>
         )}
@@ -100,15 +100,15 @@ export function ServiceImageCarousel({
 
       {/* Dots indicator */}
       {images.length > 1 && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
               className={cn(
-                "w-3 h-3 rounded-full transition-all duration-300 shadow-md",
+                "w-2 h-2 rounded-full transition-all duration-300 shadow-sm",
                 current === index + 1
-                  ? "bg-accent w-8"
+                  ? "bg-accent w-5"
                   : "bg-background/70 hover:bg-background/90"
               )}
               aria-label={`Przejdz do zdjecia ${index + 1}`}
@@ -119,7 +119,7 @@ export function ServiceImageCarousel({
 
       {/* Image counter */}
       {images.length > 1 && (
-        <div className="absolute top-5 right-5 px-4 py-2 bg-background/90 backdrop-blur-sm rounded-full text-sm font-medium text-foreground shadow-lg">
+        <div className="absolute top-3 right-3 px-2.5 py-1 bg-background/90 backdrop-blur-sm rounded-full text-xs font-medium text-foreground shadow-md">
           {current} / {count}
         </div>
       )}
