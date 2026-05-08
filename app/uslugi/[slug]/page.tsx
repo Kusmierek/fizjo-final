@@ -80,18 +80,8 @@ export default async function ServicePage({
 
             {/* Title */}
             <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-              {/* Mobile image - horizontal crop above text */}
-              <div className="lg:hidden">
-                <ServiceImageCarousel
-                  images={service.images}
-                  title={service.title}
-                  className="shadow-xl"
-                  mobileAspect
-                />
-              </div>
-
               {/* Text content */}
-              <div className="flex-1">
+              <div className="flex-1 order-2 lg:order-1">
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
                   <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
                     Usluga {String(currentIndex + 1).padStart(2, "0")}/
@@ -104,7 +94,7 @@ export default async function ServicePage({
                   {service.title}
                 </h1>
 
-                <p className="text-sm sm:text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-lg mb-6 md:mb-8">
+                <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-lg mb-6 md:mb-8">
                   {service.shortDescription}
                 </p>
 
@@ -120,9 +110,9 @@ export default async function ServicePage({
                 </Button>
               </div>
 
-              {/* Image carousel - desktop only, vertical */}
-              <div className="hidden lg:block lg:w-2/5 flex-shrink-0">
-                <div className="w-full max-w-sm ml-auto">
+              {/* Image carousel */}
+              <div className="w-full lg:w-2/5 order-1 lg:order-2 flex-shrink-0">
+                <div className="w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-sm mx-auto lg:ml-auto lg:mr-0">
                   <ServiceImageCarousel
                     images={service.images}
                     title={service.title}
