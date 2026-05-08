@@ -96,29 +96,24 @@ export default async function ServicePage({
                   {service.shortDescription}
                 </p>
               </div>
-              <div className="w-full flex items-end justify-end">
-                <div className="relative w-full lg:w-2/3 flex-shrink-0">
+              <div className="w-full flex flex-col items-center lg:items-end gap-6">
+                <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0">
                   <ServiceImageCarousel
                     images={service.images}
                     title={service.title}
                     className="shadow-2xl"
                   />
-                  <div className="absolute bottom-6 right-6 z-10">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base shadow-lg"
-                    >
-                      <a
-                        href="tel:660222440"
-                        className="flex items-center gap-3"
-                      >
-                        <Phone className="h-5 w-5" />
-                        <span>Umow wizyte</span>
-                      </a>
-                    </Button>
-                  </div>
                 </div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 py-7 text-lg shadow-lg"
+                >
+                  <a href="tel:660222440" className="flex items-center gap-3">
+                    <Phone className="h-6 w-6" />
+                    <span>Umow wizyte</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
