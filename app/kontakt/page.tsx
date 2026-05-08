@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -202,38 +203,42 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center">
+              {/* Portrait Section */}
+              <div className="flex flex-col">
                 <div className="flex items-center gap-3 mb-8">
                   <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
-                    Wsparcie
+                    Twoja terapeutka
                   </span>
                   <div className="w-12 h-px bg-accent" />
                 </div>
-                <h3 className="font-serif text-4xl md:text-5xl text-foreground leading-tight mb-8">
-                  Holistyczne podejście <br />
-                  do Twojego zdrowia
-                </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
-                  W pracy łączę fizjoterapię, terapię manualną oraz elementy
-                  pracy z ciałem, aby skutecznie docierać do źródła problemu, a
-                  nie tylko jego objawów. Każda terapia jest dopasowana
-                  indywidualnie do Twoich potrzeb.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "Indywidualny plan terapii",
-                    "Bezpieczne i naturalne metody",
-                    "Spokojna, komfortowa atmosfera",
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 p-5 bg-card border border-border"
-                    >
-                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
-                      <p className="text-foreground font-medium">{item}</p>
-                    </div>
-                  ))}
-                   {" "}
+
+                <div className="relative">
+                  <div className="aspect-[3/4] bg-muted relative overflow-hidden">
+                    <Image
+                      src="/images/magdalena-portrait.jpg"
+                      alt="Magdalena Batruch-Skoczypiec - fizjoterapeutka"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    {/* Decorative frame */}
+                    <div className="absolute inset-6 border border-background/20 pointer-events-none" />
+
+                    {/* Corner accent */}
+                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent" />
+                  </div>
+
+                  {/* Caption */}
+                  <div className="mt-8">
+                    <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">
+                      Magdalena Batruch-Skoczypiec
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Certyfikowana fizjoterapeutka z wieloletnim doswiadczeniem. 
+                      Specjalizuje sie w terapii manualnej, terapii czaszkowo-krzyzowej 
+                      oraz hirudoterapii.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
