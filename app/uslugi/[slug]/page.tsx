@@ -79,7 +79,7 @@ export default async function ServicePage({
             </Link>
 
             {/* Title */}
-            <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
               {/* Text content */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -90,22 +90,9 @@ export default async function ServicePage({
                   <div className="w-12 h-px bg-accent" />
                 </div>
 
-                {/* Mobile: Title + small image side by side */}
-                <div className="flex gap-4 mb-4 md:mb-6 lg:block">
-                  <div className="flex-1">
-                    <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary-foreground leading-tight">
-                      {service.title}
-                    </h1>
-                  </div>
-                  {/* Small image on mobile */}
-                  <div className="w-24 h-32 sm:w-32 sm:h-40 flex-shrink-0 lg:hidden overflow-hidden rounded-lg">
-                    <ServiceImageCarousel
-                      images={service.images}
-                      title={service.title}
-                      className="shadow-xl"
-                    />
-                  </div>
-                </div>
+                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-4 md:mb-6">
+                  {service.title}
+                </h1>
 
                 <p className="text-sm sm:text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-lg mb-6 md:mb-8">
                   {service.shortDescription}
@@ -121,9 +108,19 @@ export default async function ServicePage({
                     <span>Umow wizyte</span>
                   </a>
                 </Button>
+
+                {/* Mobile image - horizontal crop below CTA */}
+                <div className="mt-8 lg:hidden">
+                  <ServiceImageCarousel
+                    images={service.images}
+                    title={service.title}
+                    className="shadow-xl"
+                    mobileAspect
+                  />
+                </div>
               </div>
 
-              {/* Image carousel - desktop only */}
+              {/* Image carousel - desktop only, vertical */}
               <div className="hidden lg:block lg:w-2/5 flex-shrink-0">
                 <div className="w-full max-w-sm ml-auto">
                   <ServiceImageCarousel

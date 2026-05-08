@@ -15,12 +15,14 @@ interface ServiceImageCarouselProps {
   images: string[];
   title: string;
   className?: string;
+  mobileAspect?: boolean;
 }
 
 export function ServiceImageCarousel({
   images,
   title,
   className,
+  mobileAspect = false,
 }: ServiceImageCarouselProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -62,12 +64,18 @@ export function ServiceImageCarousel({
         <CarouselContent className="-ml-0">
           {images.map((image, index) => (
             <CarouselItem key={index} className="pl-0">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
+              <div className={cn(
+                "relative w-full overflow-hidden rounded-xl",
+                mobileAspect ? "aspect-[16/9]" : "aspect-[3/4]"
+              )}>
                 <Image
                   src={image}
                   alt={`${title} - zdjecie ${index + 1}`}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className={cn(
+                    "object-cover transition-transform duration-500 group-hover:scale-105",
+                    mobileAspect ? "object-center" : "object-top"
+                  )}
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
                   loading="eager"
