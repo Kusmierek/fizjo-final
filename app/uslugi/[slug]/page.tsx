@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { services, getServiceBySlug } from "@/lib/services-data";
+import { ServiceImageCarousel } from "@/components/service-image-carousel";
 import {
   Phone,
   ArrowRight,
@@ -97,28 +97,24 @@ export default async function ServicePage({
                 </p>
               </div>
               <div className="w-full flex items-end justify-end">
-                <div className="relative w-full lg:w-1/2 h-80 md:h-96 lg:h-100 flex-shrink-0 inset-0 bg-black/40">
-                  <Image
-                    src={`/images/uslugi/${service.slug}.jpg`}
-                    alt={service.title}
-                    width={600} // proporcjonalnie do wysokości
-                    height={400} // maksymalna wysokość
-                    className="object-cover rounded-xl shadow-lg lg:h-100"
-                    placeholder="empty"
-                    priority
+                <div className="relative w-full lg:w-2/3 flex-shrink-0">
+                  <ServiceImageCarousel
+                    images={service.images}
+                    title={service.title}
+                    className="shadow-2xl"
                   />
-                  <div className="absolute bottom-4 right-4">
+                  <div className="absolute bottom-6 right-6 z-10">
                     <Button
                       asChild
                       size="lg"
-                      className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base"
+                      className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base shadow-lg"
                     >
                       <a
                         href="tel:660222440"
                         className="flex items-center gap-3"
                       >
                         <Phone className="h-5 w-5" />
-                        <span>Umów wizytę</span>
+                        <span>Umow wizyte</span>
                       </a>
                     </Button>
                   </div>
