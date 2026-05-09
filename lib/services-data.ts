@@ -13,6 +13,7 @@ export interface Service {
   icon: string;
   images: string[];
   articles?: ServiceArticle[];
+  articlesHeader?: string;
 }
 
 export const services: Service[] = [
@@ -37,8 +38,8 @@ export const services: Service[] = [
     ],
     icon: "stethoscope",
     images: [
-      "/images/services/diagnostyka-1.jpg",
       "/images/services/diagnostyka-2.jpg",
+      "/images/services/diagnostyka-1.jpg",
     ],
   },
   {
@@ -92,7 +93,6 @@ export const services: Service[] = [
     icon: "brain",
     images: [
       "/images/services/czaszkowa-1.jpg",
-      "/images/services/czaszkowa-2.jpg",
     ],
     articles: [
       {
@@ -125,7 +125,7 @@ export const services: Service[] = [
     images: [
       "/images/gallery/massage-oil.jpg",
       "/images/gallery/back-massage.jpg",
-      "/images/gallery/therapy-head.jpg",
+      "/images/services/breuss-massage.jpg",
     ],
   },
   {
@@ -183,7 +183,6 @@ export const services: Service[] = [
     ],
     icon: "droplet",
     images: [
-      "/images/services/hirudoterapia-1.jpg",
       "/images/services/hirudoterapia-2.jpg",
       "/images/services/hirudoterapia-3.jpg",
       "/images/services/hirudoterapia-4.jpg",
@@ -194,6 +193,7 @@ export const services: Service[] = [
         url: "https://terapiapijawka.pl/dla-pacjentow/przygotowanie-do-zabiegu/",
       },
     ],
+    articlesHeader: "Jak przygotować się do zabiegu?",
   },
   {
     slug: "banki-w-fizjoterapii",

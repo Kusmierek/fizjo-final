@@ -197,12 +197,18 @@ export default async function ServicePage({
                 {/* Articles */}
                 {service.articles && service.articles.length > 0 && (
                   <div className="mt-16">
-                    <div className="flex items-center gap-3 mb-8">
-                      <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
-                        Ciekawe artykuly
-                      </span>
-                      <div className="w-12 h-px bg-accent" />
-                    </div>
+                    {service.articlesHeader ? (
+                      <h3 className="text-2xl md:text-3xl font-bold text-accent mb-8">
+                        {service.articlesHeader}
+                      </h3>
+                    ) : (
+                      <div className="flex items-center gap-3 mb-8">
+                        <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
+                          Ciekawe artykuly
+                        </span>
+                        <div className="w-12 h-px bg-accent" />
+                      </div>
+                    )}
 
                     <div className="space-y-3">
                       {service.articles.map((article, index) => (
