@@ -56,7 +56,19 @@ export default async function ServicePage({
   const prevService = currentIndex > 0 ? services[currentIndex - 1] : null;
   const nextService =
     currentIndex < services.length - 1 ? services[currentIndex + 1] : null;
-  const otherServices = services.filter((s) => s.slug !== slug).slice(0, 4);
+  
+  // Filter to show only specific services in "Inne usługi"
+  const allowedSlugs = [
+    "terapia-czaszkowo-krzyzowa",
+    "hirudoterapia", 
+    "banki-w-fizjoterapii",
+    "masaz-breussa",
+    "funkcjonalna-terapia-trzewi",
+    "rozluznianie-miesniowo-powieziowe"
+  ];
+  const otherServices = services
+    .filter((s) => s.slug !== slug && allowedSlugs.includes(s.slug))
+    .slice(0, 4);
 
   return (
     <div className="flex flex-col">
@@ -197,29 +209,43 @@ export default async function ServicePage({
                 {/* Articles */}
                 {service.articles && service.articles.length > 0 && (
                   <div className="mt-16">
-                    <div className="flex items-center gap-3 mb-8">
-                      <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
-                        Ciekawe artykuly
-                      </span>
-                      <div className="w-12 h-px bg-accent" />
-                    </div>
-
-                    <div className="space-y-3">
-                      {service.articles.map((article, index) => (
-                        <a
-                          key={index}
-                          href={article.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center justify-between p-4 sm:p-5 border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
-                        >
-                          <span className="text-sm sm:text-base text-foreground group-hover:text-primary transition-colors pr-4">
-                            {article.title}
+                    {service.articlesHeader ? (
+                      <a
+                        href={service.articles[0]?.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-3 text-2xl md:text-3xl font-bold text-accent hover:text-accent/80 transition-colors"
+                      >
+                        <span>{service.articlesHeader}</span>
+                        <ExternalLink className="h-6 w-6 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                      </a>
+                    ) : (
+                      <>
+                        <div className="flex items-center gap-3 mb-8">
+                          <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
+                            Ciekawe artykuly
                           </span>
-                          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground group-hover:text-primary flex-shrink-0 transition-colors" />
-                        </a>
-                      ))}
-                    </div>
+                          <div className="w-12 h-px bg-accent" />
+                        </div>
+
+                        <div className="space-y-3">
+                          {service.articles.map((article, index) => (
+                            <a
+                              key={index}
+                              href={article.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-center justify-between p-4 sm:p-5 border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                            >
+                              <span className="text-sm sm:text-base text-foreground group-hover:text-primary transition-colors pr-4">
+                                {article.title}
+                              </span>
+                              <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground group-hover:text-primary flex-shrink-0 transition-colors" />
+                            </a>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </div>

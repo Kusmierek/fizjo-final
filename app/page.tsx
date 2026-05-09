@@ -100,7 +100,7 @@ export default function HomePage() {
       {/* Fixed Social Media Icons */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/fiznat7?utm_source=qr&igsh=MWt4MzY3end6anNqbg%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-card border border-border/50 flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 group hover-lift"
@@ -109,7 +109,7 @@ export default function HomePage() {
           <Instagram className="h-5 w-5 text-foreground group-hover:text-accent-foreground transition-colors" />
         </a>
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/people/Fizjo-ZNatury/pfbid0242VwR8qn12oyD8mYBxMuu5UFGSYV3twzd63PtA4CVXETdu4vWBRbewgyftNJB4D9l/"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-card border border-border/50 flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group hover-lift"

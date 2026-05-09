@@ -61,7 +61,7 @@ export function Footer() {
 
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/fiznat7?utm_source=qr&igsh=MWt4MzY3end6anNqbg%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-background/20 flex items-center justify-center text-background/60 hover:text-accent hover:border-accent transition-colors"
@@ -70,7 +70,7 @@ export function Footer() {
                   <SocialIcon type="instagram" />
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/people/Fizjo-ZNatury/pfbid0242VwR8qn12oyD8mYBxMuu5UFGSYV3twzd63PtA4CVXETdu4vWBRbewgyftNJB4D9l/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-background/20 flex items-center justify-center text-background/60 hover:text-accent hover:border-accent transition-colors"

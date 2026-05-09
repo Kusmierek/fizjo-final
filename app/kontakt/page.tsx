@@ -80,33 +80,53 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden">
+      <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Background decorations */}
         <div className="absolute top-20 right-[10%] w-64 h-64 bg-primary/5 animate-blob" />
         <div className="absolute bottom-20 left-[5%] w-48 h-48 bg-accent/5 animate-blob animation-delay-400" />
 
         <div className="relative px-6 md:px-10 lg:px-16">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-px bg-accent" />
-                <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">
-                  Skontaktuj się
-                </span>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Text content */}
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-12 h-px bg-accent" />
+                  <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">
+                    Skontaktuj się
+                  </span>
+                </div>
+
+                <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8">
+                  Porozmawiajmy
+                  <br />
+                  <span className="text-stroke text-primary">
+                    o Twoim zdrowiu
+                  </span>
+                </h1>
+
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+                  Masz pytania lub chcesz umówić wizytę? Skontaktuj się ze mną
+                  telefonicznie, mailowo lub przez formularz kontaktowy.
+                </p>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-8">
-                Porozmawiajmy
-                <br />
-                <span className="text-stroke text-primary">
-                  o Twoim zdrowiu
-                </span>
-              </h1>
-
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Masz pytania lub chcesz umówić wizytę? Skontaktuj się ze mną
-                telefonicznie, mailowo lub przez formularz kontaktowy.
-              </p>
+              {/* Portrait image */}
+              <div className="relative">
+                <div className="aspect-[4/5] bg-muted relative overflow-hidden max-w-md mx-auto lg:ml-auto">
+                  <Image
+                    src="/images/magdalena-portrait.jpg"
+                    alt="Magdalena Batruch-Skoczypiec - fizjoterapeutka"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Decorative frame */}
+                  <div className="absolute inset-6 border border-background/20 pointer-events-none" />
+                  {/* Corner accent */}
+                  <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -174,18 +194,24 @@ export default function ContactPage() {
                     Social media
                   </p>
                   <div className="flex gap-3">
-                    {(["instagram", "facebook"] as const).map((social) => (
-                      <a
-                        key={social}
-                        href={`https://${social}.com`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group w-14 h-14 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
-                        aria-label={social}
-                      >
-                        <SocialIcon type={social} />
-                      </a>
-                    ))}
+                    <a
+                      href="https://www.instagram.com/fiznat7?utm_source=qr&igsh=MWt4MzY3end6anNqbg%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group w-14 h-14 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <SocialIcon type="instagram" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/people/Fizjo-ZNatury/pfbid0242VwR8qn12oyD8mYBxMuu5UFGSYV3twzd63PtA4CVXETdu4vWBRbewgyftNJB4D9l/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group w-14 h-14 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
+                      aria-label="Facebook"
+                    >
+                      <SocialIcon type="facebook" />
+                    </a>
                   </div>
                 </div>
 
@@ -203,7 +229,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Portrait Section */}
+              {/* Therapist Info */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-3 mb-8">
                   <span className="text-xs tracking-[0.3em] text-accent uppercase font-medium">
@@ -212,33 +238,22 @@ export default function ContactPage() {
                   <div className="w-12 h-px bg-accent" />
                 </div>
 
-                <div className="relative">
-                  <div className="aspect-[3/4] bg-muted relative overflow-hidden">
-                    <Image
-                      src="/images/magdalena-portrait.jpg"
-                      alt="Magdalena Batruch-Skoczypiec - fizjoterapeutka"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    {/* Decorative frame */}
-                    <div className="absolute inset-6 border border-background/20 pointer-events-none" />
-
-                    {/* Corner accent */}
-                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent" />
-                  </div>
-
-                  {/* Caption */}
-                  <div className="mt-8">
-                    <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">
-                      Magdalena Batruch-Skoczypiec
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Certyfikowana fizjoterapeutka z wieloletnim doswiadczeniem. 
-                      Specjalizuje sie w terapii manualnej, terapii czaszkowo-krzyzowej 
-                      oraz hirudoterapii.
-                    </p>
-                  </div>
+                <div className="bg-card border border-border p-8">
+                  <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
+                    Magdalena Batruch-Skoczypiec
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Certyfikowana fizjoterapeutka z wieloletnim doswiadczeniem. 
+                    Specjalizuje sie w terapii manualnej, terapii czaszkowo-krzyzowej 
+                    oraz hirudoterapii.
+                  </p>
+                  <a
+                    href="tel:660222440"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
+                  >
+                    <Phone className="h-5 w-5" />
+                    <span className="font-medium">Zadzwoń teraz</span>
+                  </a>
                 </div>
               </div>
             </div>
