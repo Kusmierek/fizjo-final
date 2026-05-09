@@ -217,6 +217,7 @@ export const services: Service[] = [
     ],
     icon: "circle",
     images: [
+      "/images/services/banki-fire.jpg",
       "/images/services/banki-1.jpg",
       "/images/services/banki-2.jpg",
     ],
