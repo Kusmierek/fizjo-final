@@ -195,7 +195,7 @@ export default function ContactPage() {
                   </p>
                   <div className="flex gap-3">
                     <a
-                      href="https://www.instagram.com/fiznat7?utm_source=qr&igsh=MWt4MzY3end6anNqbg=="
+                      href="https://www.instagram.com/fiznat7?utm_source=qr&igsh=MWt4MzY3end6anNqbg%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group w-14 h-14 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
@@ -204,7 +204,7 @@ export default function ContactPage() {
                       <SocialIcon type="instagram" />
                     </a>
                     <a
-                      href="https://www.facebook.com/share/18wvNJgu4C/"
+                      href="https://www.facebook.com/people/Fizjo-ZNatury/pfbid0242VwR8qn12oyD8mYBxMuu5UFGSYV3twzd63PtA4CVXETdu4vWBRbewgyftNJB4D9l/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group w-14 h-14 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
